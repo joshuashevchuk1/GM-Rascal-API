@@ -9,7 +9,7 @@ from google.apps import meet_v2
 logging.basicConfig(level=logging.INFO)
 
 # Ensure authentication is set
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "client_secret_270393507396-pg5fhh9ko7v7ie2s1drp3jvvv3l64hqo.apps.googleusercontent.com.json"  # Replace with actual path
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./credentials.json"  # Replace with actual path
 
 
 async def sample_get_conference_record():
