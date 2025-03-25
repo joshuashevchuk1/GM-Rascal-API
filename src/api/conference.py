@@ -1,15 +1,17 @@
 import asyncio
 import logging
-import os
-
 from google.auth import default
 from google.apps import meet_v2
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
-# Ensure authentication is set
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./credentials.json"  # Replace with actual path
+from google.oauth2 import service_account
+
+credentials = service_account.Credentials.from_service_account_file(
+    "./credentials.json"
+)
+client = meet_v2.ConferenceRecordsServiceAsyncClient(credentials=credentials)
 
 
 async def sample_get_conference_record():
