@@ -15,7 +15,7 @@ async def get_conference_records():
     )
 
     request = meet_v2.GetTranscriptRequest(
-        name="aeo-gmnj-wck"
+        name="conferenceRecords/aeo-gmnj-wck"
     )
 
     response = await client.get_transcript(request=request)
