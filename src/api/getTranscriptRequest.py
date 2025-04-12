@@ -5,8 +5,8 @@ import asyncio
 
 async def get_conference_records():
     credentials = service_account.Credentials.from_service_account_file(
-        "credentials.json"
-        #scopes=["https://www.googleapis.com/auth/meetings.space.readonly"]
+        "credentials.json",
+        scopes=["https://www.googleapis.com/auth/meetings.space.readonly"]
     )
 
     client = meet_v2.ConferenceRecordsServiceAsyncClient(
