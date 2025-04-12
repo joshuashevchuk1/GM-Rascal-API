@@ -23,7 +23,7 @@ async def sample_get_conference_record():
 
     # Initialize request argument(s) with a proper conference record name
     request = meet_v2.GetConferenceRecordRequest(
-        name="conferenceRecords/your_record_id",  # Replace with actual record ID
+        name="conferenceRecords/aeo-gmnj-wck",  # Replace with actual record ID
     )
 
     # Make the request
