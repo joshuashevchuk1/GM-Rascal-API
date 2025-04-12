@@ -6,8 +6,7 @@ import asyncio
 async def get_conference_records():
     credentials = service_account.Credentials.from_service_account_file(
         "credentials.json",
-        scopes=["https://www.googleapis.com/auth/meetings.space.readonly"],
-        admin="joshua.shevchuk@ookla.com"
+        scopes=["https://www.googleapis.com/auth/meetings.space.readonly"]
     )
 
     client = meet_v2.ConferenceRecordsServiceAsyncClient(
@@ -15,9 +14,11 @@ async def get_conference_records():
         client_options=ClientOptions(api_endpoint="https://meet.googleapis.com")
     )
 
-    request = meet_v2.ListConferenceRecordsRequest()
+    request = meet_v2.GetTranscriptRequest(
+        name="aeo-gmnj-wck"
+    )
 
-    response = await client.list_conference_records(request=request)
+    response = await client.get_transcript(request=request)
 
     async for record in response:
         print(record)
